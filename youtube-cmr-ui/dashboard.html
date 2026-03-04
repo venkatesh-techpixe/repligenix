@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - YouTube CRM Admin</title>
+    <!-- ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="#" class="brand-logo">YouTube CRM</a>
+      </div>
+
+      <div class="sidebar-menu">
+        <ul class="p-0 m-0">
+          <!-- Dashboard -->
+          <li class="nav-item">
+            <a
+              href="dashboard.html"
+              class="nav-link active"
+              data-title="Dashboard"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <!-- Channels -->
+          <li class="nav-item">
+            <a
+              href="./channels/channel.html"
+              class="nav-link"
+              data-title="Channels"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+              <span>Channels</span>
+            </a>
+          </li>
+
+          <!-- Videos -->
+          <li class="nav-item">
+            <a href="./vedios/vedios.html" class="nav-link" data-title="Videos">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+              <span>Videos</span>
+            </a>
+          </li>
+
+          <!-- Categories -->
+          <li class="nav-item">
+            <a href="./category/category.html" class="nav-link" data-title="Categories">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <span>Categories</span>
+            </a>
+          </li>
+
+          <!-- Subscription -->
+          <li class="nav-item">
+            <a href="./category/category.html" class="nav-link" data-title="Subscription Plan">
+              <svg 
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              <span>Subscription Plan</span>
+            </a>
+          </li>
+
+          <!-- Manage Users Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Manage Users">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Manage Users</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="./channels/channel.html" class="submenu-link">Active Users</a></li>
+              <li><a href="./channels/channel.html" class="submenu-link">Banned Users</a></li>
+              <li><a href="./channels/channel.html" class="submenu-link">Email Unverified</a></li>
+              <li><a href="./channels/channel.html" class="submenu-link">Mobile Unverified</a></li>
+              <li><a href="./channels/channel.html" class="submenu-link">All Users</a></li>
+              <li><a href="./channels/channel.html" class="submenu-link">Send Notification</a></li>
+            </ul>
+          </li>
+
+          <!-- Payment Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Payment">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path
+                  d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                ></path>
+              </svg>
+              <span>Payment</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="./channels/channel.html " class="submenu-link">Pending Payments</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Approved Payments</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Successful Payments</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Rejected Payments</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Initiated Payments</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">All Payments</a></li>
+            </ul>
+          </li>
+
+          <!-- Support Ticket -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Support Ticket">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              <span>Support Ticket</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="./channels/channel.html " class="submenu-link">Pending Ticket</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Closed Ticket</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">Answered Ticket</a></li>
+              <li><a href="./channels/channel.html " class="submenu-link">All Ticket</a></li>
+            </ul>
+          </li>
+
+          <!-- Reports -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Report">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+              <span>Report</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="./reports/reports.html" class="submenu-link">Subscription History</a></li>
+              <li><a href="#" class="submenu-link">Login History</a></li>
+              <li><a href="#" class="submenu-link">Notification History</a></li>
+              <li><a href="#" class="submenu-link">Subscribers</a></li>
+            </ul>
+          </li>
+
+          <!-- Subscribers -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-title="Subscribers">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Subscribers</span>
+            </a>
+          </li>
+
+          <!-- Setting -->
+          <li class="nav-item">
+            <a href="./System/system.html" class="nav-link" data-title="System Setting">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              <span>System Setting</span>
+            </a>
+          </li>
+
+          <!-- Extra -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Extra">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Extra</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="./extra/application.html" class="submenu-link">Application</a></li>
+              <li><a href="./extra/server.html" class="submenu-link">Server</a></li>
+              <li><a href="./extra/cache.html" class="submenu-link">Cache</a></li>
+              <li><a href="./extra/update.html" class="submenu-link">Update</a></li>
+            </ul>
+          </li>
+
+          <!-- Report & Request -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-title="Report & Request">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <span>Report & Request</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">YOULAB V1.0</div>
+    </aside>
+
+    <!-- Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <button class="btn btn-link link-dark p-0 me-3" id="sidebarToggle">
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="header-center flex-grow-1 d-flex justify-content-center">
+        <input
+          type="text"
+          class="search-bar d-none d-md-block"
+          placeholder="Search here..."
+        />
+      </div>
+
+      <div class="header-actions header-right">
+        <span class="action-icon d-none d-sm-block">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+        </span>
+        <span class="action-icon">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-0-6"
+            >6</span
+          >
+        </span>
+
+        <div class="dropdown">
+          <div class="avatar-wrapper dropdown-toggle" data-bs-toggle="dropdown">
+            <img
+              src="https://ui-avatars.com/api/?name=Bstore&background=1F2F97&color=fff"
+              class="avatar"
+              alt="User"
+            />
+            <span class="fw-600 d-none d-md-inline">Bstore</span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="dashboard-header">
+            <h2 class="dashboard-title">Dashboard</h2>
+            <button class="cron-btn">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              Cron Setup
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Grid -->
+      <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+          <div class="stat-card primary">
+            <div class="d-flex align-items-center gap-3">
+              <div class="stat-icon-wrapper">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Total Users</span>
+                <span class="stat-value">3</span>
+              </div>
+            </div>
+            <div class="stat-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+          <div class="stat-card success">
+            <div class="d-flex align-items-center gap-3">
+              <div class="stat-icon-wrapper">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <polyline points="17 11 19 13 23 9"></polyline>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Active Users</span>
+                <span class="stat-value">1</span>
+              </div>
+            </div>
+            <div class="stat-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+          <div class="stat-card danger">
+            <div class="d-flex align-items-center gap-3">
+              <div class="stat-icon-wrapper">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Email Unverified Users</span>
+                <span class="stat-value">1</span>
+              </div>
+            </div>
+            <div class="stat-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+          <div class="stat-card warning">
+            <div class="d-flex align-items-center gap-3">
+              <div class="stat-icon-wrapper">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Mobile Unverified Users</span>
+                <span class="stat-value">1</span>
+              </div>
+            </div>
+            <div class="stat-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Activity Row -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="dash-card-section">
+            <div class="section-title-row">
+              <h3 class="section-title">Payments</h3>
+            </div>
+            <div class="mini-stats-grid">
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">₹3,003.00 INR</div>
+                    <span class="m-label">Total Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Pending Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Rejected Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">₹0.00 INR</div>
+                    <span class="m-label">Payments Charge</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="dash-card-section">
+            <div class="section-title-row">
+              <h3 class="section-title">Resource</h3>
+            </div>
+            <div class="mini-stats-grid">
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">3</div>
+                    <span class="m-label">Total Clients</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">1</div>
+                    <span class="m-label">Total Plan</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">1</div>
+                    <span class="m-label">Active Plans</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Total Connected Channels</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analysis and Reports -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="chart-box">
+            <div class="chart-header">
+              <h3 class="section-title">Payments Report</h3>
+              <div class="chart-filter">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                February 16, 2026 - March 2, 2026
+              </div>
+            </div>
+            <div class="chart-render-area" id="paymentsChart">
+              <!-- ApexChart will render here -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-box">
+            <div class="chart-header">
+              <h3 class="section-title">Transactions Report</h3>
+              <div class="chart-filter">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                February 16, 2026 - March 2, 2026
+              </div>
+            </div>
+            <div class="chart-render-area" id="transactionsChart">
+              <!-- ApexChart will render here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login Insights -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By Browser (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment"></div>
+              <div class="donut-center-text">Chrome 85%</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By OS (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment donut-segment-primary"></div>
+              <div class="donut-center-text">Windows 70%</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By Country (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment donut-segment-success"></div>
+              <div class="donut-center-text">India 65%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script/script.js"></script>
+  </body>
+</html>
