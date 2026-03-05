@@ -122,6 +122,10 @@ a {
   background-color: #1565c0 !important;
 }
 
+.text-primary {
+  color: var(--primary) !important;
+}
+
 .avatar-circle-big {
   width: 48px;
   height: 48px;
@@ -1615,7 +1619,7 @@ main {
 .ss-icon-wrapper {
   width: 52px;
   height: 52px;
-  background:rgb(243, 241, 241);
+  background: rgb(243, 241, 241);
   border-radius: 10px;
   display: flex;
   align-items: center;
