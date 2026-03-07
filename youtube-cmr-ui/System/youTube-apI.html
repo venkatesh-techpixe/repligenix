@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube API</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="#" class="brand-logo">YouTube CRM</a>
+      </div>
+
+      <div class="sidebar-menu">
+        <ul class="p-0 m-0">
+          <!-- Dashboard -->
+          <li class="nav-item">
+            <a href="../dashboard.html" class="nav-link" data-title="Dashboard">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <!-- Channels -->
+          <li class="nav-item">
+            <a
+              href="../channels/channel.html"
+              class="nav-link"
+              data-title="Channels"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+              <span>Channels</span>
+            </a>
+          </li>
+
+          <!-- Videos -->
+          <li class="nav-item">
+            <a
+              href="../vedios/vedios.html"
+              class="nav-link"
+              data-title="Videos"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+              <span>Videos</span>
+            </a>
+          </li>
+
+          <!-- Categories -->
+          <li class="nav-item">
+            <a
+              href="../category/category.html"
+              class="nav-link"
+              data-title="Categories"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <span>Categories</span>
+            </a>
+          </li>
+
+          <!-- Subscription -->
+          <li class="nav-item">
+            <a
+              href="../subscription/subscription.html"
+              class="nav-link"
+              data-title="Subscription Plan"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              <span>Subscription Plan</span>
+            </a>
+          </li>
+
+          <!-- Manage Users Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Manage Users">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Manage Users</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >Active Users</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >Banned Users</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >Email Unverified</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >Mobile Unverified</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >All Users</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html" class="submenu-link"
+                  >Send Notification</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Payment Dropdown -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Payment">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path
+                  d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                ></path>
+              </svg>
+              <span>Payment</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Pending Payments</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Approved Payments</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Successful Payments</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Rejected Payments</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Initiated Payments</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >All Payments</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Support Ticket -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Support Ticket">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              <span>Support Ticket</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Pending Ticket</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Closed Ticket</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >Answered Ticket</a
+                >
+              </li>
+              <li>
+                <a href="../channels/channel.html " class="submenu-link"
+                  >All Ticket</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Reports -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Report">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+              <span>Report</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li>
+                <a href="../reports/reports.html" class="submenu-link"
+                  >Subscription History</a
+                >
+              </li>
+              <li><a href="#" class="submenu-link">Login History</a></li>
+              <li><a href="#" class="submenu-link">Notification History</a></li>
+            </ul>
+          </li>
+
+          <!-- Subscribers -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-title="Subscribers">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Subscribers</span>
+            </a>
+          </li>
+
+          <!-- Setting -->
+          <li class="nav-item">
+            <a
+              href="./system.html"
+              class="nav-link active"
+              data-title="System Setting"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              <span>System Setting</span>
+            </a>
+          </li>
+
+          <!-- Extra -->
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-title="Extra">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Extra</span>
+              <svg
+                class="menu-arrow"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <ul class="dropdown-menu-list">
+              <li><a href="#" class="submenu-link">Application</a></li>
+              <li><a href="#" class="submenu-link">Server</a></li>
+              <li><a href="#" class="submenu-link">Cache</a></li>
+              <li><a href="#" class="submenu-link">Update</a></li>
+            </ul>
+          </li>
+
+          <!-- Report & Request -->
+          <li class="nav-item">
+            <a href="#" class="nav-link" data-title="Report & Request">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <span>Report & Request</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">YOULAB V1.0</div>
+    </aside>
+
+    <!-- Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <button class="btn btn-link link-dark p-0 me-3" id="sidebarToggle">
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="header-center flex-grow-1 d-flex justify-content-center">
+        <input
+          type="text"
+          class="search-bar d-none d-md-block"
+          placeholder="Search here..."
+        />
+      </div>
+
+      <div class="header-actions header-right">
+        <span class="action-icon d-none d-sm-block">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+        </span>
+        <span class="action-icon">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-0-6"
+            >6</span
+          >
+        </span>
+
+        <div class="dropdown">
+          <div class="avatar-wrapper dropdown-toggle" data-bs-toggle="dropdown">
+            <img
+              src="https://ui-avatars.com/api/?name=Bstore&background=1F2F97&color=fff"
+              class="avatar"
+              alt="User"
+            />
+            <span class="fw-600 d-none d-md-inline">Bstore</span>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container-fluid">
+        <!-- Page Title & Actions -->
+        <div
+          class="dashboard-header d-flex justify-content-between align-items-center mb-4"
+        >
+          <h1 class="dashboard-title">YouTube API Setup</h1>
+          <button
+            class="btn bg-primary text-white rounded-pill px-4 d-flex align-items-center gap-2 shadow-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#helpModal"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Help
+          </button>
+        </div>
+
+        <!-- API Setup Card -->
+        <div class="bg-white rounded-16 p-4 p-lg-5 shadow-sm border-main">
+          <form method="POST" action="">
+            <div class="row g-4">
+              <!-- Google Client Id -->
+              <div class="col-md-6 text-start">
+                <div class="form-group">
+                  <label class="form-label mb-2 fw-600"
+                    >Google Client Id <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    name="google_client_id"
+                    class="form-control premium-input w-100"
+                    placeholder="Enter Google Client Id"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <!-- Google Client Secret -->
+              <div class="col-md-6 text-start">
+                <div class="form-group">
+                  <label class="form-label mb-2 fw-600"
+                    >Google Client Secret
+                    <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    name="google_client_secret"
+                    class="form-control premium-input w-100"
+                    placeholder="Enter Google Client Secret"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <!-- API Key -->
+              <div class="col-md-6 text-start">
+                <div class="form-group">
+                  <label class="form-label mb-2 fw-600"
+                    >API Key <span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    name="api_key"
+                    class="form-control premium-input w-100"
+                    placeholder="Enter API Key"
+                    value="AlzaSyBtbDmw9Tox-VK3C8kEZRCGI2nFJa9gkjA"
+                  />
+                </div>
+              </div>
+
+              <!-- Callback URL -->
+              <div class="col-md-6 text-start">
+                <div class="form-group">
+                  <label class="form-label mb-2 fw-600">Callback URL</label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="callbackUrl"
+                      class="form-control premium-input border-end-0 bg-light-gray"
+                      value="https://repligenix.com/user/channel/google/callback"
+                      readonly
+                    />
+                    <button
+                      class="btn border-main bg-white px-3"
+                      type="button"
+                      onclick="copyToClipboard('callbackUrl')"
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect
+                          x="9"
+                          y="9"
+                          width="13"
+                          height="13"
+                          rx="2"
+                          ry="2"
+                        ></rect>
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Save Button -->
+              <div class="col-12 mt-4">
+                <button
+                  type="submit"
+                  class="btn btn-confirm-yes w-100 py-3 rounded-12 fs-5 fw-bold shadow-sm transition-all hover-translate-y-n2"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Help Modal -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-20 border-0 shadow-lg">
+          <div
+            class="modal-header border-bottom-0 bg-primary rounded-top-20 p-4"
+          >
+            <h5 class="modal-title text-white fw-bold">
+              How to configure YouTube API credentials?
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-4 p-lg-5">
+            <div class="position-relative ps-4 ms-2 border-start border-2 border-light">
+              <!-- Step 1 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">1</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 1: Go to Google Cloud Console</h6>
+                  <p class="text-muted fs-0-9 mb-0">Go to <a href="https://console.cloud.google.com/" target="_blank" class="text-primary fw-600">google developer console</a></p>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">2</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 2: Select or Create a Project</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. If you already have a project for your app select it</li>
+                    <li class="fs-0-9 text-muted">2. If you don’t have one, click on Select a project and create a project</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">3</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 3: Configure OAuth Consent Screen</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-3">
+                    <li class="fs-0-9 text-muted">1. Click on OAuth consent screen</li>
+                    <li class="fs-0-9 text-muted">2. Select "External" (for public users) and click Create.</li>
+                    <li class="fs-0-9 text-muted">3. Fill out: App Name, User Support Email, Developer Contact Email</li>
+                    <li class="fs-0-9 text-muted">4. Under Test Users, add the Gmail accounts of users who will test this.</li>
+                    <li class="fs-0-9 text-muted">5. Under Scopes, click “Add or Remove Scopes” and add</li>
+                  </ul>
+                  <div class="bg-light-gray p-3 rounded-12 border-main mb-3">
+                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/youtube.force-ssl</code>
+                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/yt-analytics.readonly</code>
+                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/youtube.readonly</code>
+                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/yt-analytics-monetary.readonly</code>
+                  </div>
+                  <div class="premium-alert py-2 px-3 mb-0">
+                    <p class="mb-0 fs-0-85">Note: If your app is not published, only test users can log in.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">4</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 4: Create OAuth 2.0 Credentials</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. Go to Credentials</li>
+                    <li class="fs-0-9 text-muted">2. Click “Create Credentials” → “OAuth client ID”</li>
+                    <li class="fs-0-9 text-muted">3. Select Web Application.</li>
+                    <li class="fs-0-9 text-muted">4. Give it a name (e.g., YouTube Reply Automation).</li>
+                    <li class="fs-0-9 text-muted">5. Under Authorized redirect URIs, add bellow callback url
+                      <div class="mt-2 mb-3">
+                        <code class="bg-primary text-white px-3 py-2 rounded-8 fs-0-85 d-inline-block shadow-sm">- https://repligenix.com/user/channel/google/callback</code>
+                      </div>
+                    </li>
+                    <li class="fs-0-9 text-muted">6. Click Create, and note down the credentials
+                      <div class="ms-3 mt-1">
+                        - Client ID<br>
+                        - Client Secret
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">5</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 5: Enable YouTube Data API</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. Go to API Library</li>
+                    <li class="fs-0-9 text-muted">2. In the search bar, type “YouTube Data API v3”</li>
+                    <li class="fs-0-9 text-muted">3. Click the result</li>
+                    <li class="fs-0-9 text-muted">4. If already enabled, you will see “API enabled”</li>
+                    <li class="fs-0-9 text-muted">5. If not enabled, click Enable Note: YouTube Data API v3 works on a quota system. You get 10,000 units per day for free.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">6</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 6: Enable YouTube Analytics API</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. Again in the search bar, type “YouTube Analytics API”</li>
+                    <li class="fs-0-9 text-muted">2. Click the result</li>
+                    <li class="fs-0-9 text-muted">4. If already enabled, you will see “API enabled”</li>
+                    <li class="fs-0-9 text-muted">5. If not enabled, click Enable Note: YouTube YouTube Analytics API works on a quota system. You get 10,000 units per day for free.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 7 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">7</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 7: Create API Credentials</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. Go to Credentials Page</li>
+                    <li class="fs-0-9 text-muted">2. Click “Create Credentials” → “API key”</li>
+                    <li class="fs-0-9 text-muted">3. If you've already created an API key earlier, you can use it</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 8 -->
+              <div class="mb-5 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">8</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 8: Restrict Your API Key (Highly Recommended)</h6>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="fs-0-9 text-muted">1. Find your created API Key in the list and click on it.</li>
+                    <li class="fs-0-9 text-muted">2. Application Restrictions
+                        <div class="ms-3 mt-1 text-muted">
+                          - Choose IP addresses<br>
+                          - Add your server's public IP address
+                        </div>
+                    </li>
+                    <li class="fs-0-9 text-muted">3. API Restrictions
+                        <div class="ms-3 mt-1 text-muted">
+                          - Check Restrict Key<br>
+                          - Select API: YouTube Data API v3
+                        </div>
+                    </li>
+                    <li class="fs-0-9 text-muted">4. Click Save</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 9 -->
+              <div class="mb-0 position-relative">
+                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 32px; height: 32px; margin-left: -1px; left: -1px;">
+                  <span class="text-white fs-0-8 fw-bold">9</span>
+                </div>
+                <div class="ps-4">
+                  <h6 class="fw-700 text-dark mb-2">Step 9: Submit Your Credentials to Our Platform:</h6>
+                  <p class="text-muted fs-0-9 mb-0">Save your generated Client ID, Client Secret and API key</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../script/script.js"></script>
+  </body>
+</html>

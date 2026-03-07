@@ -158,4 +158,58 @@ document.addEventListener("DOMContentLoaded", function () {
       if (parentDropdown) parentDropdown.classList.add("open");
     }
   });
+
+  // System Configuration Toggle Switches
+  const toggleButtons = document.querySelectorAll(".btn-toggle");
+  toggleButtons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const isEnable = this.classList.contains("btn-toggle-enable");
+
+      // Toggle Classes
+      if (isEnable) {
+        this.classList.remove("btn-toggle-enable");
+        this.classList.add("btn-toggle-disable");
+        this.textContent = "Disable";
+      } else {
+        this.classList.remove("btn-toggle-disable");
+        this.classList.add("btn-toggle-enable");
+        this.textContent = "Enable";
+      }
+    });
+  });
+
+  // Image Preview Logic
+  function handleImagePreview(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+
+    if (input && preview) {
+      input.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  }
+
+  handleImagePreview("logoInput", "logoPreview");
+  handleImagePreview("faviconInput", "faviconPreview");
 });
+// Copy to Clipboard Logic
+function copyToClipboard(elementId) {
+  const copyText = document.getElementById(elementId);
+  if (copyText) {
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(copyText.value).then(() => {
+      // You could add a toast notification here if desired
+      alert("Copied to clipboard: " + copyText.value);
+    });
+  }
+}
