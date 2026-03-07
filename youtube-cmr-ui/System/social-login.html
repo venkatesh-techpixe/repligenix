@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouTube API</title>
+    <title>System</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -546,104 +546,325 @@
     </header>
 
     <main class="main-content">
-      <div class="container-fluid">
-        <!-- Page Title & Actions -->
-        <div
-          class="dashboard-header d-flex justify-content-between align-items-center mb-4"
-        >
-          <h1 class="dashboard-title">YouTube API Setup</h1>
-          <button
-            class="btn bg-primary text-white rounded-pill px-4 d-flex align-items-center gap-2 shadow-sm"
-            data-bs-toggle="modal"
-            data-bs-target="#helpModal"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
-            </svg>
-            Help
-          </button>
+      <div class="dashboard-header mb-4">
+        <h2 class="dashboard-title text-dark fw-800">
+          Social Login Credentials
+        </h2>
+      </div>
+
+      <div
+        class="channel-table-container p-0 overflow-hidden rounded-12 bg-white border-main shadow-sm"
+      >
+        <div class="table-responsive">
+          <table class="table premium-table mb-0">
+            <thead class="table-primary-head">
+              <tr>
+                <th class="ps-4 py-3 fw-600">Title</th>
+                <th class="py-3 fw-600 text-center">Client ID</th>
+                <th class="py-3 fw-600 text-center">Status</th>
+                <th class="pe-4 py-3 fw-600 text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Google Row -->
+              <tr>
+                <td class="ps-4 py-3">
+                  <div class="fw-700 text-dark fs-0-9">Google</div>
+                </td>
+                <td class="py-3 text-center">
+                  <div class="text-muted fw-600">------------</div>
+                </td>
+                <td class="py-3 text-center">
+                  <span
+                    class="badge-status-outline border-success text-success px-3 py-1 fs-0-8 rounded-pill"
+                    >Enabled</span
+                  >
+                </td>
+                <td class="pe-4 py-3 text-center">
+                  <div class="d-flex gap-2 justify-content-center">
+                    <!-- Table Actions for static layout -->
+                    <button
+                      class="btn btn-sm border border-primary text-primary d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#updateCredentialModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                        ></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      Configure
+                    </button>
+                    <button
+                      class="btn btn-sm border border-secondary text-dark d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#helpModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      </svg>
+                      Help
+                    </button>
+                    <button
+                      class="btn btn-sm border border-danger text-danger d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#confirmationModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                      </svg>
+                      Disable
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Facebook Row -->
+              <tr>
+                <td class="ps-4 py-3">
+                  <div class="fw-700 text-dark fs-0-9">Facebook</div>
+                </td>
+                <td class="py-3 text-center">
+                  <div class="text-muted fw-600">------</div>
+                </td>
+                <td class="py-3 text-center">
+                  <span
+                    class="badge-status-outline border-warning text-warning px-3 py-1 fs-0-8 rounded-pill"
+                    >Disabled</span
+                  >
+                </td>
+                <td class="pe-4 py-3 text-center">
+                  <div class="d-flex gap-2 justify-content-center">
+                    <!-- Table Actions for static layout -->
+                    <button
+                      class="btn btn-sm border border-primary text-primary d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#updateCredentialModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                        ></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      Configure
+                    </button>
+                    <button
+                      class="btn btn-sm border border-secondary text-dark d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#helpModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      </svg>
+                      Help
+                    </button>
+                    <button
+                      class="btn btn-sm border border-success text-success d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#confirmationModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      Enable
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- LinkedIn Row -->
+              <tr>
+                <td class="ps-4 py-3">
+                  <div class="fw-700 text-dark fs-0-9">Linkedin</div>
+                </td>
+                <td class="py-3 text-center">
+                  <div class="text-muted fw-600">-----</div>
+                </td>
+                <td class="py-3 text-center">
+                  <span
+                    class="badge-status-outline border-warning text-warning px-3 py-1 fs-0-8 rounded-pill"
+                    >Disabled</span
+                  >
+                </td>
+                <td class="pe-4 py-3 text-center">
+                  <div class="d-flex gap-2 justify-content-center">
+                    <!-- Table Actions for static layout -->
+                    <button
+                      class="btn btn-sm border border-primary text-primary d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#updateCredentialModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                        ></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      Configure
+                    </button>
+                    <button
+                      class="btn btn-sm border border-secondary text-dark d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#helpModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      </svg>
+                      Help
+                    </button>
+                    <button
+                      class="btn btn-sm border border-success text-success d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3"
+                      data-bs-toggle="modal"
+                      data-bs-target="#confirmationModal"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      Enable
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        <!-- API Setup Card -->
-        <div class="bg-white rounded-16 p-4 p-lg-5 shadow-sm border-main">
-          <form method="POST" action="">
-            <div class="row g-4">
-              <!-- Google Client Id -->
-              <div class="col-md-6 text-start">
-                <div class="form-group">
-                  <label class="form-label mb-2 fw-600"
-                    >Google Client Id <span class="text-danger">*</span></label
+      <!-- Update Credential Modal -->
+      <div
+        class="modal fade"
+        id="updateCredentialModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content rounded-12 border-0 shadow-lg bg-white">
+            <div
+              class="modal-header border-bottom px-4 py-3 bg-white rounded-top-12 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="modal-title fw-800 text-dark m-0 fs-5">
+                Update Credential:
+                <span class="text-dark">google</span>
+              </h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body px-4 py-4">
+              <form>
+                <div class="mb-4">
+                  <label class="form-label text-dark fw-600 mb-2"
+                    >Client ID</label
                   >
                   <input
                     type="text"
-                    name="google_client_id"
-                    class="form-control premium-input w-100"
-                    placeholder="Enter Google Client Id"
-                    value=""
+                    class="form-control premium-input shadow-none"
+                    value="------------"
                   />
                 </div>
-              </div>
-
-              <!-- Google Client Secret -->
-              <div class="col-md-6 text-start">
-                <div class="form-group">
-                  <label class="form-label mb-2 fw-600"
-                    >Google Client Secret
-                    <span class="text-danger">*</span></label
+                <div class="mb-4">
+                  <label class="form-label text-dark fw-600 mb-2"
+                    >Client Secret</label
                   >
                   <input
                     type="text"
-                    name="google_client_secret"
-                    class="form-control premium-input w-100"
-                    placeholder="Enter Google Client Secret"
-                    value=""
+                    class="form-control premium-input shadow-none"
+                    value="------------"
                   />
                 </div>
-              </div>
-
-              <!-- API Key -->
-              <div class="col-md-6 text-start">
-                <div class="form-group">
-                  <label class="form-label mb-2 fw-600"
-                    >API Key <span class="text-danger">*</span></label
+                <div class="mb-5">
+                  <label class="form-label text-dark fw-600 mb-2"
+                    >Callback URL</label
                   >
-                  <input
-                    type="text"
-                    name="api_key"
-                    class="form-control premium-input w-100"
-                    placeholder="Enter API Key"
-                    value="AlzaSyBtbDmw9Tox-VK3C8kEZRCGI2nFJa9gkjA"
-                  />
-                </div>
-              </div>
-
-              <!-- Callback URL -->
-              <div class="col-md-6 text-start">
-                <div class="form-group">
-                  <label class="form-label mb-2 fw-600">Callback URL</label>
                   <div class="input-group">
                     <input
                       type="text"
-                      id="callbackUrl"
-                      class="form-control premium-input border-end-0 bg-light-gray"
-                      value="https://repligenix.com/user/channel/google/callback"
+                      class="form-control premium-input border-end-0 shadow-none bg-light"
+                      value="https://repligenix.com/user/social-login/callback/google"
+                      id="callbackUrlInput"
                       readonly
                     />
                     <button
-                      class="btn border-main bg-white px-3"
+                      class="btn border border-main bg-light px-3"
                       type="button"
-                      onclick="copyToClipboard('callbackUrl')"
                     >
                       <svg
                         width="18"
@@ -652,8 +873,6 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                       >
                         <rect
                           x="9"
@@ -670,211 +889,152 @@
                     </button>
                   </div>
                 </div>
-              </div>
 
-              <!-- Save Button -->
-              <div class="col-12 mt-4">
                 <button
-                  type="submit"
-                  class="btn btn-confirm-yes w-100 py-3 rounded-12 fs-5 fw-bold shadow-sm transition-all hover-translate-y-n2"
+                  type="button"
+                  class="btn btn-primary w-100 rounded-8 bg-primary border-0 shadow-sm py-3 fw-600 fs-5"
                 >
-                  Save
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help Modal (Dynamically Populated) -->
+      <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content rounded-12 border-0 shadow-lg bg-white">
+            <div
+              class="modal-header border-bottom px-4 py-3 bg-white rounded-top-12 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="modal-title fw-800 text-dark m-0 fs-5">
+                How to get
+                <span class="text-dark">google</span> credentials?
+              </h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body px-4 pb-5 pt-4">
+              <div class="d-flex flex-column gap-3">
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 1:</strong> Go to
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >google developer console</a
+                  >.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 2:</strong> Click on Select a
+                  project than click on
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >New Project</a
+                  >
+                  and create a project providing the project name.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 3:</strong> Click on
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >credentials</a
+                  >.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 4:</strong> Click on create
+                  credentials and select
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >OAuth client ID</a
+                  >.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 5:</strong> Click on
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >Configure Consent Screen</a
+                  >.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 6:</strong> Choose External
+                  option and press the create button.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 7:</strong> Please fill up the
+                  required informations for app configuration.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 8:</strong> Again click on
+                  <a href="#" class="text-primary text-decoration-none fw-600"
+                    >credentials</a
+                  >
+                  and select type as web application and fill up the required
+                  informations. Also don't forget to add redirect url and press
+                  create button.
+                </p>
+                <p class="mb-0 fs-0-9 text-dark fw-500">
+                  <strong class="text-dark">Step 9:</strong> Finally you've got
+                  the credentials. Please copy the Client ID and Client Secret
+                  and paste it in admin panel google configuration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation Modal -->
+      <div
+        class="modal fade"
+        id="confirmationModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-12 border-0 shadow-lg bg-white">
+            <div
+              class="modal-header border-bottom px-4 py-3 bg-white rounded-top-12 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="modal-title fw-800 text-danger m-0 fs-5">
+                Confirmation Alert!
+              </h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body px-4 py-4">
+              <p
+                class="text-muted mb-4 text-center px-4"
+                id="confirmationModalBody"
+              >
+                Are you sure that you want to disable this login credential?
+              </p>
+              <div class="d-flex gap-3 mt-4">
+                <button
+                  type="button"
+                  class="btn btn-light bg-light rounded-8 fw-600 flex-grow-1 border-main py-2-5 text-dark"
+                  data-bs-dismiss="modal"
+                >
+                  No
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary bg-primary border-0 shadow-sm rounded-8 flex-grow-1 fw-600 py-2-5 text-white"
+                  data-bs-dismiss="modal"
+                >
+                  Yes
                 </button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
+
+      <!-- Required Scripts removed -> Modals are populated statically below -->
     </main>
-
-    <!-- Help Modal -->
-    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content rounded-20 border-0 shadow-lg">
-          <div
-            class="modal-header border-bottom-0 bg-primary rounded-top-20 p-4"
-          >
-            <h5 class="modal-title text-white fw-bold">
-              How to configure YouTube API credentials?
-            </h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body p-4 p-lg-5">
-            <div class="position-relative ps-4 ms-2 border-start border-2 border-light">
-              <!-- Step 1 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">1</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 1: Go to Google Cloud Console</h6>
-                  <p class="text-muted fs-0-9 mb-0">Go to <a href="https://console.cloud.google.com/" target="_blank" class="text-primary fw-600">google developer console</a></p>
-                </div>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">2</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 2: Select or Create a Project</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. If you already have a project for your app select it</li>
-                    <li class="fs-0-9 text-muted">2. If you don’t have one, click on Select a project and create a project</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">3</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 3: Configure OAuth Consent Screen</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-3">
-                    <li class="fs-0-9 text-muted">1. Click on OAuth consent screen</li>
-                    <li class="fs-0-9 text-muted">2. Select "External" (for public users) and click Create.</li>
-                    <li class="fs-0-9 text-muted">3. Fill out: App Name, User Support Email, Developer Contact Email</li>
-                    <li class="fs-0-9 text-muted">4. Under Test Users, add the Gmail accounts of users who will test this.</li>
-                    <li class="fs-0-9 text-muted">5. Under Scopes, click “Add or Remove Scopes” and add</li>
-                  </ul>
-                  <div class="bg-light-gray p-3 rounded-12 border-main mb-3">
-                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/youtube.force-ssl</code>
-                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/yt-analytics.readonly</code>
-                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/youtube.readonly</code>
-                    <code class="d-block fs-0-75 text-primary py-1">- https://www.googleapis.com/auth/yt-analytics-monetary.readonly</code>
-                  </div>
-                  <div class="premium-alert py-2 px-3 mb-0">
-                    <p class="mb-0 fs-0-85">Note: If your app is not published, only test users can log in.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">4</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 4: Create OAuth 2.0 Credentials</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. Go to Credentials</li>
-                    <li class="fs-0-9 text-muted">2. Click “Create Credentials” → “OAuth client ID”</li>
-                    <li class="fs-0-9 text-muted">3. Select Web Application.</li>
-                    <li class="fs-0-9 text-muted">4. Give it a name (e.g., YouTube Reply Automation).</li>
-                    <li class="fs-0-9 text-muted">5. Under Authorized redirect URIs, add bellow callback url
-                      <div class="mt-2 mb-3">
-                        <code class="bg-primary text-white px-3 py-2 rounded-8 fs-0-85 d-inline-block shadow-sm">- https://repligenix.com/user/channel/google/callback</code>
-                      </div>
-                    </li>
-                    <li class="fs-0-9 text-muted">6. Click Create, and note down the credentials
-                      <div class="ms-3 mt-1">
-                        - Client ID<br>
-                        - Client Secret
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 5 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">5</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 5: Enable YouTube Data API</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. Go to API Library</li>
-                    <li class="fs-0-9 text-muted">2. In the search bar, type “YouTube Data API v3”</li>
-                    <li class="fs-0-9 text-muted">3. Click the result</li>
-                    <li class="fs-0-9 text-muted">4. If already enabled, you will see “API enabled”</li>
-                    <li class="fs-0-9 text-muted">5. If not enabled, click Enable Note: YouTube Data API v3 works on a quota system. You get 10,000 units per day for free.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 6 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">6</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 6: Enable YouTube Analytics API</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. Again in the search bar, type “YouTube Analytics API”</li>
-                    <li class="fs-0-9 text-muted">2. Click the result</li>
-                    <li class="fs-0-9 text-muted">4. If already enabled, you will see “API enabled”</li>
-                    <li class="fs-0-9 text-muted">5. If not enabled, click Enable Note: YouTube YouTube Analytics API works on a quota system. You get 10,000 units per day for free.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 7 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">7</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 7: Create API Credentials</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. Go to Credentials Page</li>
-                    <li class="fs-0-9 text-muted">2. Click “Create Credentials” → “API key”</li>
-                    <li class="fs-0-9 text-muted">3. If you've already created an API key earlier, you can use it</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 8 -->
-              <div class="mb-5 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">8</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 8: Restrict Your API Key (Highly Recommended)</h6>
-                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="fs-0-9 text-muted">1. Find your created API Key in the list and click on it.</li>
-                    <li class="fs-0-9 text-muted">2. Application Restrictions
-                        <div class="ms-3 mt-1 text-muted">
-                          - Choose IP addresses<br>
-                          - Add your server's public IP address
-                        </div>
-                    </li>
-                    <li class="fs-0-9 text-muted">3. API Restrictions
-                        <div class="ms-3 mt-1 text-muted">
-                          - Check Restrict Key<br>
-                          - Select API: YouTube Data API v3
-                        </div>
-                    </li>
-                    <li class="fs-0-9 text-muted">4. Click Save</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Step 9 -->
-              <div class="mb-0 position-relative">
-                <div class="position-absolute top-0 start-0 translate-middle-x bg-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm avatar-32 offset-left-1">
-                  <span class="text-white fs-0-8 fw-bold">9</span>
-                </div>
-                <div class="ps-4">
-                  <h6 class="fw-700 text-dark mb-2">Step 9: Submit Your Credentials to Our Platform:</h6>
-                  <p class="text-muted fs-0-9 mb-0">Save your generated Client ID, Client Secret and API key</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

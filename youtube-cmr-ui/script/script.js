@@ -200,6 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   handleImagePreview("logoInput", "logoPreview");
   handleImagePreview("faviconInput", "faviconPreview");
+  handleImagePreview("gatewayImageInput", "gatewayImagePreview");
+  handleImagePreview("languageFlagInput", "languageFlagPreview");
 });
 // Copy to Clipboard Logic
 function copyToClipboard(elementId) {
