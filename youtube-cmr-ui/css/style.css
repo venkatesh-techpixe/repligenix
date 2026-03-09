@@ -1928,3 +1928,7 @@ main {
 .w-50px { width: 50px; }
 .h-3px { height: 3px; }
 .avatar-6 { width: 6px; height: 6px; }
+.cursor-pointer {
+  cursor: pointer;
+}
+
