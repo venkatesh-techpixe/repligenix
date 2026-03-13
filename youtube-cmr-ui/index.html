@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - YouTube CRM Admin</title>
+    <!-- ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+       <!-- Sidebar -->
+   <aside class="sidebar" id="sidebar">   
+   </aside>
+
+  <!-- Header -->
+  <header class="top-header" id="top-header">
+  </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="dashboard-header">
+            <h2 class="dashboard-title">Dashboard</h2>
+            <button
+              class="cron-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#cronModal"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+              Cron Setup
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Grid -->
+      <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+            <div class="stat-card primary">
+              <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon-wrapper">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Total Users</span>
+                  <span class="stat-value">3</span>
+                </div>
+              </div>
+              <div class="stat-arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+            <div class="stat-card success">
+              <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon-wrapper">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                  </svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Active Users</span>
+                  <span class="stat-value">1</span>
+                </div>
+              </div>
+              <div class="stat-arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+            <div class="stat-card danger">
+              <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon-wrapper">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Email Unverified Users</span>
+                  <span class="stat-value">1</span>
+                </div>
+              </div>
+              <div class="stat-arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-sm-6">
+          <a href="#">
+            <div class="stat-card warning">
+              <div class="d-flex align-items-center gap-3">
+                <div class="stat-icon-wrapper">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="5"
+                      y="2"
+                      width="14"
+                      height="20"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="stat-content">
+                  <span class="stat-label">Mobile Unverified Users</span>
+                  <span class="stat-value">1</span>
+                </div>
+              </div>
+              <div class="stat-arrow">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Activity Row -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="dash-card-section">
+            <div class="section-title-row">
+              <h3 class="section-title">Payments</h3>
+            </div>
+            <div class="mini-stats-grid">
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">₹3,003.00 INR</div>
+                    <span class="m-label">Total Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Pending Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Rejected Payments</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">₹0.00 INR</div>
+                    <span class="m-label">Payments Charge</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="dash-card-section">
+            <div class="section-title-row">
+              <h3 class="section-title">Resource</h3>
+            </div>
+            <div class="mini-stats-grid">
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">3</div>
+                    <span class="m-label">Total Clients</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">1</div>
+                    <span class="m-label">Total Plan</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">1</div>
+                    <span class="m-label">Active Plans</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+              <a href="#" class="mini-stat-item">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="mini-stat-info">
+                    <div class="m-value">0</div>
+                    <span class="m-label">Total Connected Channels</span>
+                  </div>
+                </div>
+                <div class="stat-arrow">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analysis and Reports -->
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <div class="chart-box">
+            <div class="chart-header">
+              <h3 class="section-title">Payments Report</h3>
+              <div class="chart-filter">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                February 16, 2026 - March 2, 2026
+              </div>
+            </div>
+            <div class="chart-render-area" id="paymentsChart">
+              <!-- ApexChart will render here -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-box">
+            <div class="chart-header">
+              <h3 class="section-title">Transactions Report</h3>
+              <div class="chart-filter">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                February 16, 2026 - March 2, 2026
+              </div>
+            </div>
+            <div class="chart-render-area" id="transactionsChart">
+              <!-- ApexChart will render here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login Insights -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By Browser (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment"></div>
+              <div class="donut-center-text">Chrome 85%</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By OS (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment donut-segment-primary"></div>
+              <div class="donut-center-text">Windows 70%</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="chart-box donut-card">
+            <h3 class="section-title mb-4">Login By Country (Last 30 days)</h3>
+            <div class="donut-viz">
+              <div class="donut-ring"></div>
+              <div class="donut-segment donut-segment-success"></div>
+              <div class="donut-center-text">India 65%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Cron Setup Modal -->
+    <div class="modal fade" id="cronModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content border-0 shadow-lg rounded-20 overflow-hidden"
+        >
+          <div class="modal-body p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary-light p-2 rounded-8">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--primary)"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <h4 class="modal-title fw-800 text-dark mb-0">
+                  Please Set Cron Job
+                </h4>
+              </div>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <p class="text-muted fs-0-9 mb-4">
+              Once per 5-10 minutes is ideal while once every minute is the best
+              option
+            </p>
+
+            <div class="mb-4">
+              <div
+                class="d-flex justify-content-between align-items-center mb-2"
+              >
+                <label class="fw-700 text-dark mb-0">Cron Command</label>
+                <span class="fs-0-8 text-muted fw-500"
+                  >Last Cron Run:
+                  <b class="text-dark fst-italic">2 minutes ago</b></span
+                >
+              </div>
+              <div
+                class="input-group shadow-sm rounded-12 overflow-hidden border"
+              >
+                <input
+                  type="text"
+                  class="form-control border-0 bg-light py-3 fs-0-9 fw-600 px-4"
+                  value="curl -s https://repligenix.com/cron"
+                  readonly
+                />
+                <button
+                  class="btn bg-white border-0 text-primary fw-700 px-4 d-flex align-items-center gap-2"
+                  type="button"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3">
+              <button
+                class="btn btn-outline-primary border-2 w-100 py-3 rounded-12 fw-700 d-flex align-items-center justify-content-center gap-2"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  ></path>
+                </svg>
+                Cron Job Setting
+              </button>
+              <button
+                class="btn btn-outline-warning border-2 w-100 py-3 rounded-12 fw-700 d-flex align-items-center justify-content-center gap-2"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+                Run Manually
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./script/script.js"></script>
+    <script src="./script/layout.js"></script>
+  </body>
+</html>
