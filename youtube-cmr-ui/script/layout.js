@@ -419,7 +419,7 @@ const sidebarLayout = `
 
           <!-- Report & Request -->
           <li class="nav-item">
-            <a href="#" class="nav-link" data-title="Report & Request">
+            <a href="../reportsAndRequest/reports-request.html" class="nav-link" data-title="Report & Request">
               <svg
                 width="20"
                 height="20"
@@ -443,9 +443,11 @@ const sidebarLayout = `
       <div class="sidebar-footer">YOULAB V1.0</div>
 `;
 
+
+
 const headerLayout = `
       <div class="header-left">
-        <button class="btn btn-link link-dark p-0 me-3" id="sidebarToggle">
+        <button class="btn btn-link link-dark  p-0 me-3" id="sidebarToggle">
           <svg
             width="24"
             height="24"
@@ -514,14 +516,15 @@ const headerLayout = `
             <span class="fw-600 d-none d-md-inline">Bstore</span>
           </div>
           <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
+            <li><a class="dropdown-item" href="../profile/password.html">Password</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
           </ul>
         </div>
       </div>
 `;
+
 
 document.getElementById("sidebar").innerHTML = sidebarLayout;
 document.getElementById("top-header").innerHTML = headerLayout;

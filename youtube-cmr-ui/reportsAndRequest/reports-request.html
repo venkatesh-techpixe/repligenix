@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add manual gateway</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <!-- Header -->
+    <header class="top-header" id="top-header"></header>
+   
+
+    <main class="main-content">
+      <div class="container-fluid py-4">
+
+  <!-- Page Header -->
+
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+    <h5 class="fw-600 text-dark mb-0">Your Listed Report & Request</h5>
+
+<div class="d-flex gap-2">
+  <button class="btn btn-outline-warning rounded-10 fw-500"
+         data-bs-toggle="modal"
+            data-bs-target="#categoryModal"
+            onclick="prepareModal('add')"
+  >
+    Report a bug
+  </button>
+
+  <button class="btn btn-outline-success rounded-10 fw-500">
+    Request for Support
+  </button>
+</div>
+
+  </div>
+
+  
+      <div
+        class="channel-table-container p-0 overflow-hidden rounded-12 bg-white border-main"
+      >
+        <div class="table-responsive">
+          <table class="table premium-table mb-0">
+            <thead class="table-primary-head">
+              <tr>
+                <th class="ps-4">Type</th>
+                <th>Message</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td class="ps-4">
+                  <div class="fw-600 text-dark"></div>
+                </td>
+                <td>
+                  <div class="text-muted text-truncate max-w-400">
+                    no data found
+                  </div>
+                </td>
+                <td>
+                  <span class="status-badge status-active"></span>
+                </td>
+     
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+</div>
+
+
+
+    <!-- Modals -->
+    <!-- Add/Update Category Modal -->
+    <div
+      class="modal fade"
+      id="categoryModal"
+      tabindex="-1"
+      aria-labelledby="categoryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-20">
+          <div class="modal-header border-bottom-0 pb-0 px-4 pt-4">
+            <h5 class="modal-title fw-700 text-dark" id="categoryModalLabel">
+              Report & Request
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body px-4 py-4">
+            <form id="categoryForm">
+              <div class="mb-4">
+                <label for="categoryName" class="form-label mb-2"
+                  >Type <span class="text-danger">*</span></label
+                >
+                <select
+                  class="form-control premium-input shadow-none"
+                  id="categoryName"
+                  required
+                >
+                  <option value="">Select Type</option>
+                  <option value="report">Report bug</option>
+                  <option value="request">feature request</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="categoryDescription" class="form-label mb-2"
+                  >Message <span class="text-danger">*</span></label
+                >
+                <textarea
+                  class="form-control premium-input shadow-none"
+                  id="categoryDescription"
+                  rows="5"
+                  placeholder="Enter message"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary w-100 py-3 rounded-12 fw-600 shadow-sm border-0 bg-primary"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../script/script.js"></script>
+    <script src="../script/layout.js"></script>
+  </body>
+</html>
