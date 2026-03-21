@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/youtube-cmr-ui/css/style.css" />
+    <link rel="stylesheet" href="/youtube-cmr-admin/css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+    </aside>
+
+    <!-- Header -->
+    <header class="top-header" id="top-header">
+
+    </header>
+
+    <main class="main-content">
+  <div class="container-fluid">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <h2 class="dashboard-title">
+        Video Comments 
+        <span class="badge-custom-primary ms-2">@testing</span>
+      </h2>
+    </div>
+
+    <!-- Comment Input Card -->
+    <div class="dash-card-section mb-4">
+      <div class="d-flex flex-column gap-3">
+
+        <textarea
+          class="premium-input resize-none min-h-150"
+          placeholder="Write your comment..."
+        ></textarea>
+
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-add-new">
+            Submit Comment
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="d-flex gap-2 mb-3 flex-wrap">
+      <button class="btn btn-light border-main rounded-8 fw-600 px-3">
+        All Comments <span class="badge-warning">2</span>
+      </button>
+
+      <button class="btn btn-light border-main rounded-8 fw-600 px-3">
+        RPSC ADDA <span class="badge-warning">1</span>
+      </button>
+
+      <button class="btn btn-light border-main rounded-8 fw-600 px-3">
+        Diwali <span class="badge-warning">0</span>
+      </button>
+    </div>
+
+    <!-- Comment List -->
+    <div class="d-flex flex-column gap-3">
+
+      <!-- Comment Card -->
+      <div class="dash-card-section">
+
+        <div class="d-flex gap-3">
+
+          <!-- Avatar -->
+          <div class="avatar-circle-big bg-purple">B</div>
+
+          <!-- Content -->
+          <div class="flex-grow-1">
+
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <div>
+                <span class="fw-600">@Bharatshop-h5j</span>
+                <span class="text-light fs-0-8 ms-2">
+                  Jan 28, 2026 02:03 PM
+                </span>
+              </div>
+
+              <span class="badge-custom-primary">RPSC ADDA</span>
+            </div>
+
+            <div class="bg-light-subtle rounded-10 p-2 mb-2 fs-0-9">
+              hai
+            </div>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-details">Reply</button>
+
+              <button class="btn btn-sm border-main rounded-8 fw-600">
+                1 Replies
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Comment Card 2 -->
+      <div class="dash-card-section">
+
+        <div class="d-flex gap-3">
+
+          <div class="avatar-circle-big bg-green">t</div>
+
+          <div class="flex-grow-1">
+
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <div>
+                <span class="fw-600">testing</span>
+                <span class="text-light fs-0-8 ms-2">
+                  Jan 28, 2026 02:13 PM
+                </span>
+              </div>
+            </div>
+
+            <div class="bg-light-subtle rounded-10 p-2 mb-2 fs-0-9">
+              hai
+            </div>
+
+            <button class="btn btn-sm btn-details">Reply</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/youtube-cmr-ui/script/script.js"></script>
+    <script src="/youtube-cmr-admin/script/layout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System</title>
+    <!-- ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/youtube-cmr-ui/css/style.css" />
+    <link rel="stylesheet" href="/youtube-cmr-admin/css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <!-- Header -->
+    <header class="top-header" id="top-header"></header>
+
+    <main class="main-content">
+      <div class="container-fluid p-4">
+        <!-- User Profile Header Card -->
+        <div class="admin-profile-card mb-4 p-4 p-md-5">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-4">
+            <div class="d-flex align-items-center gap-4">
+              <div class="admin-avatar shadow-sm">B</div>
+              <div>
+                <h2 class="h3 mb-1 fw-bold">Bharatshop</h2>
+                <div class="d-flex align-items-center gap-2 mt-2 opacity-75">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <p class="mb-0 fs-0-9">Published: Oct 21, 2024 06:21 AM</p>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle rounded-pill fw-600 shadow-sm px-4 py-2" type="button" data-bs-toggle="dropdown">
+                Bharatshop
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                <li><a class="dropdown-item fw-500 py-2" href="#">Testing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="row g-4 mb-4">
+          <!-- Stat Card 1 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-primary">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">7</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Videos</p>
+            </div>
+          </div>
+          <!-- Stat Card 2 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-success">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">6</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Views</p>
+            </div>
+          </div>
+          <!-- Stat Card 3 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-danger">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">0</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Likes</p>
+            </div>
+          </div>
+          <!-- Stat Card 4 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-info">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">0</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Comments</p>
+            </div>
+          </div>
+          <!-- Stat Card 5 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-warning">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">2</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Shares</p>
+            </div>
+          </div>
+          <!-- Stat Card 6 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-purple">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">0</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Subscribers</p>
+            </div>
+          </div>
+          <!-- Stat Card 7 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper admin-icon-secondary">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+              </div>
+              <h3 class="fs-1 fw-800 mb-1 text-dark">00:01</h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Total Watch Time</p>
+            </div>
+          </div>
+          <!-- Stat Card 8 -->
+          <div class="col-xl-3 col-sm-6">
+            <div class="admin-stat-card p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="admin-icon-wrapper bg-white shadow-sm text-danger">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+              </div>
+              <h3 class="fs-3 fw-800 mb-1 text-dark">₹0.00 <span class="fs-6 text-muted fw-600">INR</span> - ₹0.06 <span class="fs-6 text-muted fw-600">INR</span></h3>
+              <p class="text-muted fw-600 mb-0 fs-0-9">Estimated Revenue</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Area -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-12">
+            <div class="admin-chart-card">
+              <h3 class="admin-chart-title">Performance Report</h3>
+              <div id="performanceChart" class="min-h-350"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <div class="admin-chart-card">
+              <h3 class="admin-chart-title">Engagement Report</h3>
+              <div id="engagementChart" class="min-h-250"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="admin-chart-card">
+              <h3 class="admin-chart-title">Subscription Report</h3>
+              <div id="subscriptionChart" class="min-h-250"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/youtube-cmr-ui/script/script.js"></script>
+    <script src="/youtube-cmr-admin/script/layout.js"></script>
+
+    <!-- ApexCharts Dashboard Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Shared chart options for consistent styling
+        var fontFam = 'Inter, sans-serif';
+        var textColor = '#64748b'; // text-muted equivalent
+        var gridColor = '#f1f5f9';
+
+        // 1. Performance Chart
+        var perfOptions = {
+          series: [{
+            name: 'Metrics',
+            data: [246, 222, 54, 0]
+          }],
+          chart: {
+            type: 'bar',
+            height: 350,
+            toolbar: { show: false },
+            fontFamily: fontFam
+          },
+          colors: ['#22c55e'],
+          plotOptions: {
+            bar: {
+              borderRadius: 6,
+              columnWidth: '40%',
+              dataLabels: { position: 'top' },
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            offsetY: -20,
+            style: { fontSize: '12px', colors: ["#0f172a"] }
+          },
+          xaxis: {
+            categories: ["Total Views", "Watch Minutes", "Avg View Seconds", "Revenue"],
+            axisBorder: { show: false },
+            axisTicks: { show: false },
+            labels: { style: { colors: textColor, fontWeight: 500 } }
+          },
+          yaxis: {
+            labels: { style: { colors: textColor, fontWeight: 500 } }
+          },
+          grid: { borderColor: gridColor, strokeDashArray: 4 }
+        };
+        var perfChart = new ApexCharts(document.querySelector("#performanceChart"), perfOptions);
+        perfChart.render();
+
+        // 2. Engagement Report
+        var engOptions = {
+          series: [{
+            name: 'Engagement',
+            data: [0, 7, 7]
+          }],
+          chart: {
+            type: 'bar',
+            height: 250,
+            toolbar: { show: false },
+            fontFamily: fontFam
+          },
+          colors: ['#ef4444'], // Using danger color for variety
+          plotOptions: {
+            bar: {
+              borderRadius: 6,
+              columnWidth: '35%',
+              dataLabels: { position: 'top' },
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            offsetY: -20,
+            style: { colors: ["#0f172a"] }
+          },
+          xaxis: {
+            categories: ["Total Likes", "Total Comments", "Total Shares"],
+            labels: { style: { colors: textColor, fontWeight: 500 } },
+            axisBorder: { show: false },
+            axisTicks: { show: false }
+          },
+          yaxis: { labels: { style: { colors: textColor, fontWeight: 500 } } },
+          grid: { borderColor: gridColor, strokeDashArray: 4 }
+        };
+        var engChart = new ApexCharts(document.querySelector("#engagementChart"), engOptions);
+        engChart.render();
+
+        // 3. Subscription Report (Horizontal bar)
+        var subOptions = {
+          series: [{
+            name: 'Count',
+            data: [1, 0, 3]
+          }],
+          chart: {
+            type: 'bar',
+            height: 250,
+            toolbar: { show: false },
+            fontFamily: fontFam
+          },
+          colors: ['#f59e0b'], // Using success color
+          plotOptions: {
+            bar: {
+              borderRadius: 6,
+              horizontal: true,
+              barHeight: '40%',
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            offsetX: 15,
+            style: { colors: ["#0f172a"] }
+          },
+          xaxis: {
+            categories: ['Subscriber Gained', 'Subscriber Lost', 'Video Count'],
+            labels: { style: { colors: textColor, fontWeight: 500 } },
+            axisBorder: { show: false },
+            axisTicks: { show: false }
+          },
+          yaxis: { labels: { style: { colors: textColor, fontWeight: 500 } } },
+          grid: { borderColor: gridColor, strokeDashArray: 4 }
+        };
+        var subChart = new ApexCharts(document.querySelector("#subscriptionChart"), subOptions);
+        subChart.render();
+      });
+    </script>
+  </body>
+</html>

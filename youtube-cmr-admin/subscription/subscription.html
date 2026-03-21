@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/youtube-cmr-ui/css/style.css" />
+    <link rel="stylesheet" href="/youtube-cmr-admin/css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+    </aside>
+
+    <!-- Header -->
+    <header class="top-header" id="top-header">
+
+    </header>
+
+    <main class="main-content">
+  <div class="container-fluid">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <h2 class="dashboard-title">Subscription Plans</h2>
+    </div>
+
+    <!-- Current Plan -->
+    <div class="dash-card-section mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+      <div>
+        <h5 class="fw-700 mb-2">
+          Current Plan 
+          <span class="badge-custom-primary ms-2">YouTube Comments</span>
+        </h5>
+
+        <div class="d-flex gap-4 flex-wrap text-light fs-0-9">
+          <div><strong class="text-dark">Plan:</strong> Yearly</div>
+          <div><strong class="text-dark">Channels:</strong> 3 / 10</div>
+          <div><strong class="text-dark">Replies:</strong> 7 / 25769803764</div>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div class="d-flex gap-2">
+        <div class="border-main rounded-8 px-3 py-2 text-center">
+          <div class="fw-700 text-dark">290</div>
+          <div class="fs-0-7 text-light">Days</div>
+        </div>
+        <div class="border-main rounded-8 px-3 py-2 text-center">
+          <div class="fw-700 text-dark">01</div>
+          <div class="fs-0-7 text-light">Hours</div>
+        </div>
+        <div class="border-main rounded-8 px-3 py-2 text-center">
+          <div class="fw-700 text-dark">32</div>
+          <div class="fs-0-7 text-light">Minutes</div>
+        </div>
+        <div class="border-main rounded-8 px-3 py-2 text-center">
+          <div class="fw-700 text-dark">55</div>
+          <div class="fs-0-7 text-light">Seconds</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Toggle -->
+    <div class="d-flex justify-content-center mb-4">
+      <div class="border-main rounded-20 p-1 d-flex">
+        <button class="btn bg-primary text-white rounded-20 px-4 fw-600">
+          Monthly
+        </button>
+        <button class="btn rounded-20 px-4 fw-600">
+          Yearly
+        </button>
+      </div>
+    </div>
+
+    <!-- Plan Card -->
+    <div class="d-flex justify-content-center">
+
+      <div class="dash-card-section text-center max-w-400 w-100">
+
+        <span class="badge-custom-primary mb-2">YouTube Comments</span>
+
+        <h6 class="text-light mb-2">Comments</h6>
+
+        <h2 class="fw-800 text-dark mb-3">
+          ₹1.00 <span class="fs-0-9 text-light">/month</span>
+        </h2>
+
+        <!-- Features -->
+        <div class="text-start mb-4 d-flex flex-column gap-2 fs-0-9">
+
+          <div class="d-flex align-items-center gap-2">
+            ✔ <span>Connect channels up to 10</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            ✔ <span>Manage comments up to 2147483647</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            ✔ <span>Auto Reply Comments</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            ✔ <span>Negative Comments Delete</span>
+          </div>
+
+        </div>
+
+        <!-- Button -->
+        <button class="btn btn-add-new w-100 justify-content-center">
+          → Subscribe
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/youtube-cmr-ui/script/script.js"></script>
+    <script src="/youtube-cmr-admin/script/layout.js"></script>
+  </body>
+</html>

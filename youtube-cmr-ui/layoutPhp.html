@@ -18,31 +18,22 @@
     <link rel="stylesheet" href="../youtube-cmr-ui/css/style.css" />
   </head>
 
-  <style>
-    .nav-link.active,
-.submenu-link.active {
-  background: #1F2F97;
-  color: #fff !important;
-  border-radius: 6px;
-}
-
-.nav-item.dropdown.open > .nav-link {
-  background: #eef0ff;
-}
-
-.dropdown-menu-list {
-  display: none;
-}
-
-.nav-item.dropdown.open .dropdown-menu-list {
-  display: block;
-}
-  </style>
   <body>
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <a href="#" class="brand-logo"><img class="w-4" src="/youtube-cmr-ui/assets/images/logo.webp" alt=""></a>
+      <div class="sidebar-header text-center position-relative">
+        <a
+          href="#"
+          class="brand-logo d-flex flex-column align-items-center position-relative"
+        >
+          <img
+            src="/youtube-cmr-ui/assets/images/logo.webp"
+            alt="logo"
+            class="logo-img mt-4"
+          />
+
+          <span class="brand-text"> repligenix </span>
+        </a>
       </div>
 
       <div class="sidebar-menu">
@@ -69,11 +60,7 @@
 
           <!-- Channels -->
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link"
-              data-title="Channels"
-            >
+            <a href="#" class="nav-link" data-title="Channels">
               <svg
                 width="20"
                 height="20"
@@ -95,11 +82,7 @@
 
           <!-- Videos -->
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link"
-              data-title="Videos"
-            >
+            <a href="#" class="nav-link" data-title="Videos">
               <svg
                 width="20"
                 height="20"
@@ -117,11 +100,7 @@
 
           <!-- Categories -->
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link"
-              data-title="Categories"
-            >
+            <a href="#" class="nav-link" data-title="Categories">
               <svg
                 width="20"
                 height="20"
@@ -143,11 +122,7 @@
 
           <!-- Subscription -->
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link"
-              data-title="Subscription Plan"
-            >
+            <a href="#" class="nav-link" data-title="Subscription Plan">
               <svg
                 width="20"
                 height="20"
@@ -194,34 +169,22 @@
             </a>
             <ul class="dropdown-menu-list">
               <li>
-                <a href="#" class="submenu-link"
-                  >Active Users</a
-                >
+                <a href="#" class="submenu-link">Active Users</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Banned Users</a
-                >
+                <a href="#" class="submenu-link">Banned Users</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Email Unverified</a
-                >
+                <a href="#" class="submenu-link">Email Unverified</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Mobile Unverified</a
-                >
+                <a href="#" class="submenu-link">Mobile Unverified</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >All Users</a
-                >
+                <a href="#" class="submenu-link">All Users</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Send Notification</a
-                >
+                <a href="#" class="submenu-link">Send Notification</a>
               </li>
             </ul>
           </li>
@@ -257,34 +220,22 @@
             </a>
             <ul class="dropdown-menu-list">
               <li>
-                <a href="#" class="submenu-link"
-                  >Pending Payments</a
-                >
+                <a href="#" class="submenu-link">Pending Payments</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Approved Payments</a
-                >
+                <a href="#" class="submenu-link">Approved Payments</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Successful Payments</a
-                >
+                <a href="#" class="submenu-link">Successful Payments</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Rejected Payments</a
-                >
+                <a href="#" class="submenu-link">Rejected Payments</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Initiated Payments</a
-                >
+                <a href="#" class="submenu-link">Initiated Payments</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >All Payments</a
-                >
+                <a href="#" class="submenu-link">All Payments</a>
               </li>
             </ul>
           </li>
@@ -319,24 +270,16 @@
             </a>
             <ul class="dropdown-menu-list">
               <li>
-                <a href="#" class="submenu-link"
-                  >Pending Ticket</a
-                >
+                <a href="#" class="submenu-link">Pending Ticket</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Closed Ticket</a
-                >
+                <a href="#" class="submenu-link">Closed Ticket</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >Answered Ticket</a
-                >
+                <a href="#" class="submenu-link">Answered Ticket</a>
               </li>
               <li>
-                <a href="#" class="submenu-link"
-                  >All Ticket</a
-                >
+                <a href="#" class="submenu-link">All Ticket</a>
               </li>
             </ul>
           </li>
@@ -370,9 +313,7 @@
             </a>
             <ul class="dropdown-menu-list">
               <li>
-                <a href="#" class="submenu-link"
-                  >Subscription History</a
-                >
+                <a href="#" class="submenu-link">Subscription History</a>
               </li>
               <li><a href="#" class="submenu-link">Login History</a></li>
               <li><a href="#" class="submenu-link">Notification History</a></li>
@@ -401,11 +342,7 @@
 
           <!-- Setting -->
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link active"
-              data-title="System Setting"
-            >
+            <a href="#" class="nav-link active" data-title="System Setting">
               <svg
                 width="20"
                 height="20"
@@ -566,47 +503,8 @@
       </div>
     </header>
 
-    <main class="main-content">
+    <main class="main-content"></main>
 
-    </main>
-
-
-    <script>
-      const dropdownItems = document.querySelectorAll(".nav-item.dropdown");
-
-dropdownItems.forEach((item) => {
-  const link = item.querySelector(".nav-link");
-
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    dropdownItems.forEach((other) => {
-      if (other !== item) {
-        other.classList.remove("open");
-      }
-    });
-
-    item.classList.toggle("open");
-  });
-});
-
-const allLinks = document.querySelectorAll(".nav-link, .submenu-link");
-
-allLinks.forEach((link) => {
-  link.addEventListener("click", function () {
-
-    allLinks.forEach((l) => l.classList.remove("active"));
-
-    this.classList.add("active");
-
-    const parentDropdown = this.closest(".nav-item.dropdown");
-
-    if (parentDropdown) {
-      parentDropdown.classList.add("open");
-    }
-  });
-});
-    </script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->

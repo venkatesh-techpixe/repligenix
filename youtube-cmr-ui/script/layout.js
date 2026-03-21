@@ -1,8 +1,19 @@
 const sidebarLayout = `
-      <div class="sidebar-header">
-        <a href="#" class="brand-logo">YouTube CRM</a>
-      </div>
+        <div class="sidebar-header text-center position-relative">
+  <a href="#" class="brand-logo d-flex flex-column align-items-center position-relative">
 
+    <img
+      src="/youtube-cmr-ui/assets/images/logo.webp"
+      alt="logo"
+      class="logo-img mt-4"
+    >
+
+    <span class="brand-text">
+      repligenix
+    </span>
+
+  </a>
+</div>
       <div class="sidebar-menu">
         <ul class="p-0 m-0">
           <!-- Dashboard -->
@@ -361,7 +372,7 @@ const sidebarLayout = `
           <li class="nav-item">
             <a
               href="../system/system.html"
-              class="nav-link active"
+              class="nav-link"
               data-title="System Setting"
             >
               <svg

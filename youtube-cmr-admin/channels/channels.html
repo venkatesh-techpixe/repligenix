@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/youtube-cmr-ui/css/style.css" />
+    <link rel="stylesheet" href="/youtube-cmr-admin/css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <!-- Header -->
+    <header class="top-header" id="top-header"></header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div
+        class="dashboard-header d-flex justify-content-between align-items-center mb-4"
+      >
+        <h2 class="dashboard-title">My Channels</h2>
+        <div class="d-flex">
+          <div class="input-group max-w-300">
+            <!-- Add New Button -->
+            <button
+              class="btn btn-primary btn-add-new"
+              data-bs-toggle="modal"
+              data-bs-target="#categoryModal"
+              onclick="prepareModal('add')"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Add New
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="channel-table-container p-0 overflow-hidden rounded-12">
+        <div class="table-responsive">
+          <table class="table premium-table mb-0">
+            <thead class="table-primary-head">
+              <tr>
+                <th class="ps-4">Thumbnail</th>
+                <th>Creator</th>
+                <th>Name</th>
+                <th>Total Videos</th>
+                <th>Total Subscribers</th>
+                <th>Video Syncing</th>
+                <th>Connectivity</th>
+                <th class="pe-4">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ps-4">
+                  <div class="avatar-circle-big bg-purple">B</div>
+                </td>
+                <td>
+                  <div class="creator-name">sai teja</div>
+                  <div class="text-primary creator-handle">@saiteja</div>
+                </td>
+                <td class="text-muted">Bharatshop</td>
+                <td class="text-muted">3</td>
+                <td class="text-muted">1</td>
+                <td>
+                  <span class="badge-status-outline danger">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="me-2"
+                    >
+                      <path d="M23 4v6h-6"></path>
+                      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    Desyncing
+                  </span>
+                </td>
+                <td>
+                  <span class="badge-status-outline danger">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="me-2"
+                    >
+                      <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                      <line x1="12" y1="2" x2="12" y2="12"></line>
+                    </svg>
+                    Disconnected
+                  </span>
+                </td>
+                <td class="pe-4 py-3 text-center align-middle">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-sm border border-primary text-primary d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3 shadow-none custom-dropdown-btn"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <circle cx="12" cy="12" r="1.5"></circle>
+                        <circle cx="12" cy="5" r="1.5"></circle>
+                        <circle cx="12" cy="19" r="1.5"></circle>
+                      </svg>
+                      Action
+                    </button>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2 py-2"
+                      style="border-radius: 8px"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="#"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                          </svg>
+                          Sign in again</a
+                        >
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="#"
+                          data-bs-toggle="modal"
+                          data-bs-target="#confirmationModal"
+                        >
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                          </svg>
+                          Start Syncing
+                        </button>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="/youtube-cmr-admin/videos/videos.html"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                            ></path>
+                            <path
+                              d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                            ></path>
+                          </svg>
+                          Videos</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9"
+                          href="/youtube-cmr-admin/channels/channel-details.html"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                            ></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                          </svg>
+                          Details</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="ps-4">
+                  <div class="avatar-circle-big bg-green">t</div>
+                </td>
+                <td>
+                  <div class="fw-bold text-dark">sai teja</div>
+                  <div class="text-primary fs-0-85">@saiteja</div>
+                </td>
+                <td class="text-muted">testing</td>
+                <td class="text-muted">7</td>
+                <td class="text-muted">0</td>
+                <td>
+                  <span class="badge-status-outline danger">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="me-2"
+                    >
+                      <path d="M23 4v6h-6"></path>
+                      <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    Desyncing
+                  </span>
+                </td>
+                <td>
+                  <span class="badge-status-outline danger">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="me-2"
+                    >
+                      <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                      <line x1="12" y1="2" x2="12" y2="12"></line>
+                    </svg>
+                    Disconnected
+                  </span>
+                </td>
+                <td class="pe-4 py-3 text-center align-middle">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-sm border border-primary text-primary d-inline-flex align-items-center gap-1 bg-transparent hover-bg-light rounded-8 fw-600 px-3 shadow-none custom-dropdown-btn"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <circle cx="12" cy="12" r="1.5"></circle>
+                        <circle cx="12" cy="5" r="1.5"></circle>
+                        <circle cx="12" cy="19" r="1.5"></circle>
+                      </svg>
+                      Action
+                    </button>
+                    <ul
+                      class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2 py-2"
+                      style="border-radius: 8px"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="#"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                          </svg>
+                          Run Now</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="#"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                          </svg>
+                          Pause</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9 border-bottom"
+                          href="#"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                            ></path>
+                            <path
+                              d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                            ></path>
+                          </svg>
+                          Edit</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item d-flex align-items-center gap-2 text-dark fw-500 py-2 fs-0-9"
+                          href="#"
+                          ><svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#7e7e7e"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                            ></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                          </svg>
+                          Logs</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- Confirmation Modal -->
+      <div
+        class="modal fade"
+        id="confirmationModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-12 border-0 shadow-lg bg-white">
+            <div
+              class="modal-header border-bottom px-4 py-3 bg-white rounded-top-12 d-flex justify-content-between align-items-center"
+            >
+              <h5 class="modal-title fw-800 text-danger m-0 fs-5">
+                Confirmation Alert!
+              </h5>
+              <button
+                type="button"
+                class="btn-close shadow-none"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body px-4 py-4">
+              <p
+                class="text-muted mb-4 text-center px-4"
+                id="confirmationModalBody"
+              >
+                Are you sure to sync this channel?
+
+
+              </p>
+              <div class="d-flex gap-3 mt-4">
+                <button
+                  type="button"
+                  class="btn btn-light bg-light rounded-8 fw-600 flex-grow-1 border-main py-2-5 text-dark"
+                  data-bs-dismiss="modal"
+                >
+                  No
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary bg-primary border-0 shadow-sm rounded-8 flex-grow-1 fw-600 py-2-5 text-white"
+                  data-bs-dismiss="modal"
+                >
+                  Yes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/youtube-cmr-ui/script/script.js"></script>
+    <script src="/youtube-cmr-admin/script/layout.js"></script>
+  </body>
+</html>
