@@ -579,9 +579,10 @@ const headerLayout = `
             />
             <span class="fw-600 d-none d-md-inline">Bstore</span>
           </div>
-          <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+          <ul class="dropdown-menu dropdown-menu-end p-2 shadow border-0">
             <li><a class="dropdown-item" href="../profile/profile.html">Profile</a></li>
-            <li><a class="dropdown-item" href="../profile/password.html">Password</a></li>
+            <li class="my-2"><a class="dropdown-item" href="../profile/password.html">Password</a></li>
+                       <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item text-danger" href="https://repligenix.com/user/login">Logout</a></li>
           </ul>
         </div>
