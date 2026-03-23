@@ -1,7 +1,7 @@
 const sidebarLayout = `
       <div class="sidebar-header text-center position-relative">
         <a
-          href="#"
+          href="/youtube-cmr-admin/dashboard/dashboard.html"
           class="brand-logo d-flex flex-column align-items-center position-relative"
         >
           <img
@@ -201,8 +201,7 @@ const sidebarLayout = `
         </ul>
       </div>
 
-`
-
+`;
 
 const headerLayout = `
           <div class="header-left">
@@ -224,8 +223,9 @@ const headerLayout = `
 
 
       <div class="header-actions header-right">
-        <span class="action-icon d-none d-sm-block">
-          <svg
+         <span class="action-icon d-none d-sm-block">
+          <a href="https://repligenix.com/" target="_blank" class="text-decoration-none text-secondary">
+            <svg
             width="20"
             height="20"
             viewBox="0 0 24 24"
@@ -239,25 +239,81 @@ const headerLayout = `
               d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
             ></path>
           </svg>
+          </a>
         </span>
-        <span class="action-icon">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-0-6"
-            >6</span
-          >
-        </span>
+        <div class="position-relative">
+          <!-- Bell Icon -->
+          <span class="action-icon cursor-pointer" id="notificationBtn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
 
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-0-6"
+            >
+              9
+            </span>
+          </span>
+
+          <!-- Notification Box -->
+          <div id="notificationBox" class="notification-box d-none">
+            <div class="notification-header border-bottom mb-2 pb-2">
+              <h6 class="mb-0 fw-600 text-dark">Notification</h6>
+              <span class="fs-0-8 text-secondary">You have 9 unread notification</span>
+            </div>
+            
+            <div style="max-height: 280px; overflow-y: auto; overflow-x: hidden; padding-right: 5px;">
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>3 days ago</span>
+              </div>
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>4 days ago</span>
+              </div>
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>2 weeks ago</span>
+              </div>
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>3 weeks ago</span>
+              </div>
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>1 month ago</span>
+              </div>
+              <div class="notification-item">
+                A new contact message has been submitted
+                <span>2 months ago</span>
+              </div>
+              <div class="notification-item">
+                Deposit request from tejasai
+                <span>2 months ago</span>
+              </div>
+              <div class="notification-item">
+                New member registered
+                <span>2 months ago</span>
+              </div>
+              <div class="notification-item">
+                New member registered
+                <span>2 months ago</span>
+              </div>
+            </div>
+
+            <button class="btn bg-primary text-white w-100 mt-2 rounded-8">
+              View all notifications
+            </button>
+          </div>
+        </div>
         <div class="dropdown">
           <div class="avatar-wrapper dropdown-toggle" data-bs-toggle="dropdown">
             <img
@@ -268,15 +324,13 @@ const headerLayout = `
             <span class="fw-600 d-none d-md-inline">sai teja</span>
           </div>
           <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="/youtube-cmr-admin/profile/profile.html">Profile Settings</a></li>
+            <li><a class="dropdown-item" href="/youtube-cmr-admin/profile/change-password.html">Change Password</a></li>
+            <li><a class="dropdown-item text-danger" href="https://repligenix.com/user/login">Logout</a></li>
           </ul>
         </div>
       </div>
 `;
-
 
 document.getElementById("sidebar").innerHTML = sidebarLayout;
 document.getElementById("top-header").innerHTML = headerLayout;

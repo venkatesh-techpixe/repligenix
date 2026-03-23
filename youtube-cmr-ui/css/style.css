@@ -2020,3 +2020,46 @@ align-items:center;
 justify-content:center;
 color:var(--primary);
 }
+
+
+/* notification */
+.notification-box {
+  position: absolute;
+  top: 40px;
+  right: -471%;
+  width: 280px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  border-radius: 12px;
+  z-index: 9999;
+}
+
+.notification-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.notification-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.notification-item span {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+}
+
+.position-relative {
+  position: relative !important;
+}

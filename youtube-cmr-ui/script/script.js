@@ -98,6 +98,23 @@ navItems.forEach((item) => {
   });
 
 });
+
+  // Notification Popup
+  const notificationBtn = document.getElementById("notificationBtn");
+  const notificationBox = document.getElementById("notificationBox");
+
+  if (notificationBtn && notificationBox) {
+    notificationBtn.addEventListener("click", function () {
+      notificationBox.classList.toggle("d-none");
+    });
+
+    // Close notification when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!notificationBtn.contains(e.target) && !notificationBox.contains(e.target)) {
+        notificationBox.classList.add("d-none");
+      }
+    });
+  }
   // Keep active menu after refresh
   const currentPath = window.location.pathname.split("/").pop();
 
